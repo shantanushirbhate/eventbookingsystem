@@ -1,0 +1,52 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap');
+@import "tailwindcss";
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  color: #0f172a;
+
+  /* Shared EventNest background */
+  background-image:
+    linear-gradient(
+      rgba(248, 250, 252, 0.86),
+      rgba(248, 250, 252, 0.86)
+    ),
+    url("https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=2000&q=85");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Consistent form typography */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* Outfit typography */
+.hero-font,
+.navbar-font {
+  font-family: "Outfit", sans-serif;
+}
+
+.brand-font {
+  font-family: "Outfit", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -1.2px;
+}

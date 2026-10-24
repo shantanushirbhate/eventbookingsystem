@@ -1,0 +1,23 @@
+
+event-booking-app/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Hero.jsx
+│   │   ├── SearchBar.jsx
+│   │   ├── VenueCard.jsx
+│   │   ├── VenueList.jsx
+│   │   ├── BookingForm.jsx
+│   │   └── Footer.jsx
+│   │
+│   ├── data/
+│   │   └── venues.js
+│   │
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+│
+├── index.html
+├── package.json
+└── vite.config.js
