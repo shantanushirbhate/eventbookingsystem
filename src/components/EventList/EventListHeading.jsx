@@ -1,27 +1,31 @@
-import { CalendarDays } from "lucide-react";
 
-export default function EventListHeading({ count }) {
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+
+export default function EventListHeading() {
   return (
-    <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+    <div className="mb-6 flex items-center justify-between gap-4">
       <div>
-        <p className="text-sm font-bold uppercase tracking-[0.16em] text-orange-600">
-          Discover experiences
+        <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-orange-600">
+          Discover What's Happening
         </p>
 
-        <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+        <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
           Explore Events
         </h2>
 
-        <p className="mt-3 max-w-xl text-base leading-7 text-slate-600">
-          Discover celebrations, professional gatherings,
-          concerts, festivals, and more.
+        <p className="mt-2 text-slate-600">
+          Find exciting events and celebrations around you.
         </p>
       </div>
 
-      <div className="flex items-center gap-2 text-sm font-medium text-slate-600">
-        <CalendarDays size={18} className="text-orange-500" />
-        {count} events found
-      </div>
+      <Link
+        to="/events"
+        className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-orange-500 px-4 py-2.5 font-semibold text-orange-600 transition hover:bg-orange-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+      >
+        View All
+        <ArrowRight size={18} />
+      </Link>
     </div>
   );
 }
