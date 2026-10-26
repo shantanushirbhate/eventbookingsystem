@@ -151,6 +151,23 @@ export default function Navbar() {
     };
   }, []);
 
+  // Close the mobile menu if the screen grows to desktop width (xl = 1280px)
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1280px)");
+
+    const handleResize = (event) => {
+      if (event.matches) {
+        setMenuOpen(false);
+      }
+    };
+
+    mediaQuery.addEventListener("change", handleResize);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleResize);
+    };
+  }, []);
+
   const renderSubcategoryPanel = () => {
     if (!activeType || !activeCategory) return null;
 
@@ -359,9 +376,8 @@ export default function Navbar() {
         </nav>
       </header>
 
-      {/* IMPORTANT: Sidebar is outside the header to avoid
-          backdrop-blur and sticky-header positioning problems.
-          It stays mounted so it can slide in AND out. */}
+      {/* Sidebar stays mounted so it can slide in AND out.
+          It renders through a portal inside MobileSidebarr.jsx. */}
       <MobileSidebar
         isOpen={menuOpen}
         onClose={closeMenu}
